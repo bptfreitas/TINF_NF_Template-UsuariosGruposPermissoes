@@ -17,7 +17,7 @@ if [[ "$owner" != "root" ]]; then
 fi
 
 if [[ "$group" != "gerente" ]]; then
-	echo "Grupo eh '$group', deve ser 'root'!"
+	echo "Grupo eh '$group', deve ser 'gerente'!"
 	exit 1
 fi
 
