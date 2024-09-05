@@ -7,18 +7,43 @@ if [[ ! -d /srv ]]; then
 	
 fi
 
-owner=`ls -l / | grep srv | awk '{ print $3 }'`
+permission="`sudo ls -la / | grep srv | awk '{ print $1 }'`"
 
-group=`ls -l / | grep srv | awk '{ print $4 }'`
-
-if [[ "$owner" != "root" ]]; then
-	echo "Dono eh '$owner', deve ser 'root'!"
+if [[ "$permission" != "drwxr-x--x" ]]; then 
+	echo "Erro de permissoes em /srv! "
 	exit 1
 fi
 
-if [[ "$group" != "gerente" ]]; then
-	echo "Grupo eh '$group', deve ser 'gerente'!"
+
+if [[ ! -d /srv/alunos ]]; then
+
+	echo "Pasta /srv/alunos nao existe!"
+	exit 1
+	
+fi
+
+permission="`sudo ls -la /srv | grep alunos | awk '{ print $1 }'`"
+
+if [[ "$permission" != "drwxrwx---" ]]; then 
+	echo "Erro de permissoes em /srv/alunos! "
 	exit 1
 fi
+
+
+if [[ ! -d /srv/professores ]]; then
+
+	echo "Pasta /srv/alunos nao existe!"
+	exit 1
+	
+fi
+
+permission="`sudo ls -la /srv | grep professores | awk '{ print $1 }'`"
+
+if [[ "$permission" != "drwxrwx---" ]]; then 
+	echo "Erro de permissoes em /srv/alunos! "
+	exit 1
+fi
+
+
 
 exit 0

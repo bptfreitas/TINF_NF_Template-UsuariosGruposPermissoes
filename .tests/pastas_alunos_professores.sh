@@ -7,8 +7,8 @@ if [[ ! -d /srv/alunos ]]; then
 	
 fi
 
-owner=`ls -l / | grep srv | awk '{ print $3 }'`
-group=`ls -l / | grep srv | awk '{ print $4 }'`
+owner=`sudo ls -l /srv | grep alunos | awk '{ print $3 }'`
+group=`sudo ls -l /srv | grep alunos | awk '{ print $4 }'`
 
 if [[ "$owner" != "root" ]]; then
 
@@ -32,12 +32,12 @@ if [[ ! -d /srv/professores ]]; then
 	
 fi
 
-owner=`ls -l / | grep srv | awk '{ print $3 }'`
-group=`ls -l / | grep srv | awk '{ print $4 }'`
+owner=`sudo ls -l /srv | grep professores | awk '{ print $3 }'`
+group=`sudo ls -l /srv | grep professores | awk '{ print $4 }'`
 
 if [[ "$owner" != "root" ]]; then
 
-	echo "Dono de /srv/professores '$owner', deve ser 'aluno'!"
+	echo "Dono de /srv/professores '$owner', deve ser 'root'!"
 	exit 1
 	
 fi
