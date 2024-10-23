@@ -2,7 +2,7 @@
 
 if [[ ! -d /srv/alunos ]]; then
 
-	echo "Pasta /srv/alunos nao existe!"
+	echo -e "\nERRO: Pasta /srv/alunos nao existe!"
 	exit 1
 	
 fi
@@ -12,14 +12,14 @@ group=`sudo ls -l /srv | grep alunos | awk '{ print $4 }'`
 
 if [[ "$owner" != "root" ]]; then
 
-	echo "Dono de /srv/alunos '$owner', deve ser 'root'!"
+	echo -e "\nERRO: Dono de /srv/alunos '$owner', deve ser 'root'!"
 	exit 1
 	
 fi
 
 if [[ "$group" != "aluno" ]]; then
 
-	echo "Grupo de /srv/alunos '$group', deve ser 'aluno'!"
+	echo -e "\nERRO: Grupo de /srv/alunos '$group', deve ser 'aluno'!"
 	exit 1
 	
 fi

@@ -9,14 +9,14 @@ function check_validity(){
 	
 	if [[ $validade_senha -ne 90 ]]; then
 	
-		echo "User '$user' nao possui 90 dias de validade de senha!"
+		echo -e "\nERRO: User '$user' nao possui 90 dias de validade de senha!"
 		return 1
 		
 	fi
 	
 	if [[ $data_expiracao -ne 20088 ]]; then
 	
-		echo "User '$user' nao possui conta expirando 31/12/2024!"
+		echo -e "\nERRO: User '$user' nao possui conta expirando 31/12/2024!"
 		return 1
 		
 	fi	

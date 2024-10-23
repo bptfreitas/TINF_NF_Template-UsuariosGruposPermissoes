@@ -9,7 +9,7 @@ function checkuser(){
 
 	if [[ $gid_aluno -ne $gid_user ]]; then
 
-		echo "Grupo de $user = $gid_user, esperava $gid_aluno!"
+		echo -e "\nERRO: Grupo de $user = $gid_user, esperava $gid_aluno!"
 		
 		return 1
 
@@ -19,9 +19,9 @@ function checkuser(){
 
 	if [[ "$pasta_home" != "/srv/alunos/$user" ]]; then
 
-		echo "Pasta home de $user = '$pasta_home', deve ser /srv/alunos/$user!"
+		echo -e "\nERRO: Pasta home de $user = '$pasta_home', deve ser /srv/alunos/$user!"
 		
-		return 1
+		return 2
 
 	fi
 	
