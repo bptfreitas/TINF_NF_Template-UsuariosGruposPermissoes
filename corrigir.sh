@@ -1,6 +1,6 @@
 #!/bin/bash
 
-container='arquivos-redirecionamentos'
+container='usuarios-grupos-permissoes'
 tag='dev'
 
 docker_dir="`which docker`"
