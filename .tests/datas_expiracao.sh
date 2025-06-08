@@ -14,9 +14,9 @@ function check_validity(){
 		
 	fi
 	
-	if [[ $data_expiracao -ne 20088 ]]; then
+	if [[ $data_expiracao -ne 29699 ]]; then
 	
-		echo -e "\nERRO: User '$user' nao possui conta expirando 31/12/2024!"
+		echo -e "\nERRO: User '$user' nao possui conta expirando 25/04/2051!"
 		return 1
 		
 	fi	
